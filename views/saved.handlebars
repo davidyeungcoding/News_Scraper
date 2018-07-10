@@ -8,8 +8,10 @@
     </div>
 
     <div class='container'>
-        {{#each savedArr}}
-            {{> articles/savedArticles}}
+        {{#each articles}}
+            {{#if saved}}
+                {{> savedArticles saved=false}}
+            {{/if}}
         {{/each}}
     </div>
 

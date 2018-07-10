@@ -4,15 +4,17 @@
         <div class='landing-header container'>
             <h1>NPR Headlines</h1>
             <div>
-                <button class='waves-effect waves-light btn-large'>Scrape Articles</button>
+                <button class='waves-effect waves-light btn-large' id='scraper'>Scrape Articles</button>
             </div>
         </div>
         <div class='parallax'><img src='/assets/images/rawpixel-255078-unsplash.jpg'></div>
     </div>
 
     <div class='container'>
-        {{#each allArr}}
-            {{> article/allArticles}}
+        {{#each articles}}
+            {{#unless saved}}
+                {{> allArticles saved=true}}
+            {{/unless}}
         {{/each}}
     </div>
 

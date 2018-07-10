@@ -10,7 +10,7 @@ const db = require('../models');
 // || EXPORT ||
 // ============
 
-module.exports = function(app){
+module.exports = function(app) {
 
     // =============
     // || SCRAPER ||
@@ -38,7 +38,8 @@ module.exports = function(app){
     // ======================
 
     app.get('/articles', function(req, res) {
-        db.Article.findAll({}).then(function(dbArticle) {
+        db.Article.find({saved: false}).then(function(dbArticle) {
+            // res.render('landing', dbArticle);
             res.json(dbArticle);
         }).catch(function(err) {
             res.json(err);
@@ -75,7 +76,7 @@ module.exports = function(app){
     // || LANDING ROUTE ||
     // ===================
 
-    app.get('/', function(req, res){
+    app.get('/', function(req, res) {
         res.render('landing');
     });
 
@@ -83,7 +84,7 @@ module.exports = function(app){
     // || SAVED ROUTE ||
     // =================
 
-    app.get('/saved', function(req, res){
+    app.get('/saved', function(req, res) {
         res.render('saved');
     });
 
@@ -91,7 +92,7 @@ module.exports = function(app){
     // || EVERYTHING ELSE ||
     // =====================
 
-    app.get('*', function(req, res){
+    app.get('*', function(req, res) {
         res.render('landing');
     });
 
