@@ -5,9 +5,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const axios = require('axios');
-const cheerio = require('cheerio');
-const db = require('./models');
+// const axios = require('axios');
+// const cheerio = require('cheerio');
+// const db = require('./models');
 
 // ====================
 // || INITIALIZATION ||

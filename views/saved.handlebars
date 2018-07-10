@@ -1,0 +1,16 @@
+<div class='content'>
+
+    <div class='parallax-container'>
+        <div class='landing-header container'>
+            <h1>Saved Headlines</h1>
+        </div>
+        <div class='parallax'><img src='/assets/images/rawpixel-255078-unsplash.jpg'></div>
+    </div>
+
+    <div class='container'>
+        {{#each savedArr}}
+            {{> articles/savedArticles}}
+        {{/each}}
+    </div>
+
+</div>
